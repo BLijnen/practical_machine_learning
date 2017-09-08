@@ -198,7 +198,7 @@ their class membership.
     7 8 1 1 3 
 
 5. Random Forest Variable Importance
-====================================
+
 
 To conclude our analysis we will investigate the importance of a
 variable. To estimate the importance we run the `randomForest()`
@@ -212,7 +212,7 @@ most important variables in order to keep the plot readable.
 ![](practical_machine_learning/graphs/var_imp.png)
 
 6. Conclusions
-==============
+
 
 -   In order to predict the class membership of the lifting exercises
     (class A = correct lifting and classes B-E represent incorrect
