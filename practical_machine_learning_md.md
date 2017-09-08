@@ -1,5 +1,4 @@
 1. Introduction
-===============
 
 In this project, we will use data from accelerometers on the belt,
 forearm, arm, and dumbell of 6 participants and we will attempt to
@@ -12,7 +11,6 @@ prediction model to predict 20 different test cases in the test set. At
 the end of our analysis we will report our key findings.
 
 2. Data import and data cleaning
-================================
 
 We start by importing the datasets and the packages we will use. The
 data comes from: Velloso, E., Bulling, A., Gellersen, H., Ugulino, W.,
@@ -89,7 +87,6 @@ observations to develop our model and 40% for assessing the model.
     [1] 7846   53
 
 3. Prediction Model: Random Forest
-==================================
 
 We choose to develop a random forest model to predict the class of the
 lifting exercises because a random classifier does not attempt to fit a
@@ -173,14 +170,13 @@ for all outcome categories.
 
 The accuracy of the prediction is as high as 0.9934 with a 95%
 confidence interval of \[0.9913, 0.995\]. This means that the
-**out-of-sample error** is 1 − 0.9934 = 0.0066. Of course we had many
+**out-of-sample error** is 1 - 0.9934 = 0.0066. Of course we had many
 observations to develop our model which significantly increases the
 likelihood of finding a highly performant model. The different
 statistics by class corroborate the success of predicting the class
 membership of the test observations.
 
 4. Using the random forest model on new cases
-=============================================
 
 We now use the second dataset with 20 completely new cases to predict
 their class membership.
@@ -213,7 +209,7 @@ most important variables in order to keep the plot readable.
     var_imp<-randomForest(classe~., data=training, ntree=501, importance=TRUE)
     varImpPlot(var_imp, main="Variable Importance", n.var=min(15, nrow(var_imp$importance)))
 
-![](practical_machine_learning_md_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![](practical_machine_learning_md_files/figure-markdown_strict/var_imp.png)
 
 6. Conclusions
 ==============
