@@ -71,7 +71,7 @@ First we fit the model and print the confusion matrix. Next, we run the model on
 ```{r comment=NA}
 set.seed(1150)
 modFit<-randomForest(classe~., data=training, ntree=501)
-pander(modFit)
+print(modFit)
 ```
 
 The confusion matrix shows that the **classification error** is very low for all outcome categories.
@@ -92,8 +92,8 @@ We now use the second dataset with 20 completely new cases to predict their clas
 pred_new_cases<-predict(modFit, pml_test, type="class")
 tab_pred<-data.frame(case=pml_test$X, predicted_class=pred_new_cases)
 tab_pred_trans<-t(tab_pred)
-pander(tab_pred_trans[-1,], split.table=Inf)
-pander(table(pred_new_cases), caption="Predicted class of 20 new cases")
+print(tab_pred_trans[-1,], split.table=Inf)
+print(table(pred_new_cases), caption="Predicted class of 20 new cases")
 ```
 
 # 5. Random Forest Variable Importance 
