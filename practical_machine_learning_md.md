@@ -209,7 +209,8 @@ most important variables in order to keep the plot readable.
     var_imp<-randomForest(classe~., data=training, ntree=501, importance=TRUE)
     varImpPlot(var_imp, main="Variable Importance", n.var=min(15, nrow(var_imp$importance)))
 
-![](PA1_template_files/figure-markdown_github-ascii_identifiers/var_imp.png)
+![GitHub var_imp](/practical_machine_learning/graphs/var_imp.png)
+Format: ![https://github.com/BLijnen/practical_machine_learning/graphs/var_imp.png](url)
 
 6. Conclusions
 
